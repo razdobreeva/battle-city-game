@@ -39,9 +39,9 @@
 
                 const promise = Loader
                     .loadImage(src)
-                    .then(image => { // подписка на результат promise
+                    .then(json => { // подписка на результат promise
                         // когда изображение будет загружено, оно добавится в resources экземпляра класса
-                        this.resources.images[name] = image; 
+                        this.resources.images[name] = json;
 
                         // удаляем запись о необходимости загрузки изображения из очереди загрузки (так как оно уже загружено)
                         if (this.loadOrder.images.includes(imageData)) {
